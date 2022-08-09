@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 
 public class ConnectionFactory {
-    public static final String URL = "jdbc:mysql://localhost:3306/car";
+    public static final String URL = "jdbc:mysql://localhost:3306/RDBMS";
     public static final String USER = "blue";
     public static final String PASS = "abc123";
 
@@ -17,6 +17,10 @@ public class ConnectionFactory {
         } catch (SQLException ex) {
             throw new RuntimeException("Error connecting to the database", ex);
         }
+    }
+
+    public static void main(String[] args) {
+        Connection connection = ConnectionFactory.getConnection();
     }
 
 }
